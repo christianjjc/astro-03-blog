@@ -14,6 +14,10 @@ const blogPosts = await getCollection('blog');
         {SiteConfig.title}
       </h1>
 
+      <div class="m-10">
+        <a class="text-blue-500 hover:underline" href="/blog/1">Blog Paginado</a>
+      </div>
+
       <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
         {blogPosts.map((p) => <TypedBlogPost post={p} />)}
       </div>
