@@ -1,12 +1,12 @@
 ---
-import { getCollection } from "astro:content";
-import { SiteConfig } from "../config/site-config";
-import MainLayout from "../layouts/MainLayout.astro";
-import TypedBlogPost from "src/components/TypedBlogPost.astro";
+import { getCollection } from 'astro:content';
+import { SiteConfig } from '../config/site-config';
+import MainLayout from '../layouts/MainLayout.astro';
+import TypedBlogPost from 'src/components/TypedBlogPost.astro';
 
 // import BlogPost from "../components/BlogPost.astro";
 
-const blogPosts = await getCollection("blog");
+const blogPosts = await getCollection('blog');
 ---
 
 <MainLayout title=`${SiteConfig.title}`>
