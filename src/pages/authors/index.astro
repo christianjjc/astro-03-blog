@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import TypedBlogAuthor from 'src/components/TypedBlogAuthor.astro';
+import { SiteConfig } from 'src/config/site-config';
+import MainLayout from 'src/layouts/MainLayout.astro';
+
+const blogAuthors = await getCollection('author');
+---
+
+<MainLayout>
+  <section class="bg-white dark:bg-gray-900">
+    <div class="container px-6 py-10 mx-auto">
+      <h1 class="text-3xl font-semibold capitalize lg:text-4xl text-white">
+        {SiteConfig.title}
+      </h1>
+    </div>
+  </section>
+
+  <section class="grid grid-col-1 sm:grid-cols-2 gap-2">
+    {blogAuthors.map((a) => <TypedBlogAuthor author={a} />)}
+  </section>
+</MainLayout>

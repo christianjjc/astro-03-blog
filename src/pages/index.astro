@@ -4,7 +4,11 @@ import { SiteConfig } from '../config/site-config';
 import MainLayout from '../layouts/MainLayout.astro';
 import TypedBlogPost from 'src/components/TypedBlogPost.astro';
 
-const blogPosts = await getCollection('blog');
+const blogPosts = await getCollection(
+  //
+  'blog',
+  (post) => post.data.isDraft === false,
+);
 ---
 
 <MainLayout title=`${SiteConfig.title}`>
@@ -14,8 +18,9 @@ const blogPosts = await getCollection('blog');
         {SiteConfig.title}
       </h1>
 
-      <div class="m-10">
+      <div class="m-10 flex flex-col gap-5">
         <a class="text-blue-500 hover:underline" href="/blog/1">Blog Paginado</a>
+        <a class="text-blue-500 hover:underline" href="/authors/">Authors</a>
       </div>
 
       <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
