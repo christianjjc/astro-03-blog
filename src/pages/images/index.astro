@@ -8,7 +8,20 @@ import { Image } from 'astro:assets';
 <MainLayout title="Imágenes">
   <img loading="eager" src="/assets/images/post-05.png" width="250" height="250" />
 
-  <Image src={post05Img} width="250" height="250" alt={'Imagen del Post'} />
+  <Image
+    src={post05Img}
+    style={{
+      height: '250px',
+      width: '250px',
+    }}
+    width="500"
+    height="500"
+    alt={'Imagen del Post'}
+  />
+
+  <h2>Quality Low</h2>
+
+  <Image src={post05Img} width="500" height="500" quality={'mid'} alt={'low'} />
 
   <div
     style={{
@@ -17,3 +30,9 @@ import { Image } from 'astro:assets';
   </div>
   <img loading="lazy" src="/assets/images/post-05.png" width="250" height="250" />
 </MainLayout>
+
+<!-- <style>
+  h2 {
+    @apply text-white mt-10;
+  }
+</style> -->
