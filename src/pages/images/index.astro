@@ -2,13 +2,13 @@
 import MainLayout from 'src/layouts/MainLayout.astro';
 
 import post05Img from '@images/post-05.png';
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 ---
 
 <MainLayout title="Imágenes">
-  <img loading="eager" src="/assets/images/post-05.png" width="250" height="250" />
+  <!-- <img loading="eager" src="/assets/images/post-05.png" width="250" height="250" /> -->
 
-  <Image
+  <!-- <Image
     src={post05Img}
     style={{
       height: '250px',
@@ -17,18 +17,40 @@ import { Image } from 'astro:assets';
     width="500"
     height="500"
     alt={'Imagen del Post'}
-  />
+  /> -->
 
   <h2>Quality Low</h2>
 
-  <Image src={post05Img} width="500" height="500" quality={'mid'} alt={'low'} />
+  <Image src={post05Img} width="250" height="250" quality={'low'} alt={'low'} />
 
-  <div
+  <h2>Quality High</h2>
+
+  <Image src={post05Img} width="250" height="250" quality={'high'} alt={'high'} />
+
+  <h2>Format</h2>
+
+  <Image src={post05Img} format="jpg" width="250" height="250" quality={'high'} alt={'high'} />
+
+  <h2>Formatos VARIOS</h2>
+
+  <!-- width="250"
+  height="250" -->
+
+  <Picture
+    src={post05Img}
+    formats={['avif', 'webp', 'jpeg', 'png']}
+    widths={[240, 540, 720, post05Img.width]}
+    sizes={`(max-width: 360px) 240px,(max-width: 720px) 540px,(max-width: 1600) 720px, ${post05Img.width}px`}
+    quality={'high'}
+    alt={'high'}
+  />
+
+  <!-- <div
     style={{
       height: '3000px',
     }}>
   </div>
-  <img loading="lazy" src="/assets/images/post-05.png" width="250" height="250" />
+  <img loading="lazy" src="/assets/images/post-05.png" width="250" height="250" /> -->
 </MainLayout>
 
 <style>
