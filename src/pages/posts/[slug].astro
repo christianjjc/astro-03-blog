@@ -19,10 +19,11 @@ const { Content, headings } = await post.render();
 ---
 
 <BlogLayout title={frontmatter.title}>
-  <h1 class="text-xs text-gray-500 mb-0">{frontmatter.title}</h1>
-  <h4 class="text-md text-gray-400 mb-0">{frontmatter.author}</h4>
+  <h1>{frontmatter.title}</h1>
+  <h4>{frontmatter.author}</h4>
 
   <h3>Tabla de Contenidos</h3>
+
   <ol>
     {
       headings.map((heading, index) => (
@@ -41,3 +42,13 @@ const { Content, headings } = await post.render();
     <a href="#btn-back">Ir arriba</a>
   </div>
 </BlogLayout>
+
+<style>
+  @import '@styles/global.css';
+  h1 {
+    @apply text-3xl text-gray-500 mb-0;
+  }
+  h4 {
+    @apply text-xl text-gray-400 mb-0;
+  }
+</style>
