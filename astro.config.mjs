@@ -13,5 +13,5 @@ export default defineConfig({
 
   integrations: [mdx()],
   site: 'https://christianjjc.github.io',
-  // base: 'astro-03-blog',
+  base: 'astro-03-blog',
 });
