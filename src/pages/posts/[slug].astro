@@ -55,7 +55,7 @@ const author = (await getEntry('author', post.data.author.id))!.data;
     {
       headings.map((heading, index) => (
         <li>
-          <a href={`/astro-03-blog/#${heading.slug}`}>
+          <a href={`#${heading.slug}`}>
             {index + 1} - {heading.text}
           </a>
         </li>
@@ -66,7 +66,7 @@ const author = (await getEntry('author', post.data.author.id))!.data;
   <Content />
 
   <div class="mt-20">
-    <a href="/astro-03-blog/#btn-back">Ir arriba</a>
+    <a href="#btn-back">Ir arriba</a>
   </div>
 </BlogLayout>
 
