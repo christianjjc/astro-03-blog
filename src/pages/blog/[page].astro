@@ -28,7 +28,7 @@ const { page } = Astro.props;
   <section aria-label="Controles" class="flex justify-between mt-10">
     <!--   page .. ?? prev   -->
     <a
-      href={page.url.prev}
+      href=`/astro-03-blog/${page.url.prev}`
       class:list={{
         disabled: !page.url.prev,
       }}>Anteriores</a
@@ -36,7 +36,7 @@ const { page } = Astro.props;
 
     <!--   page .. ?? next   -->
     <a
-      href={page.url.next}
+      href=`/astro-03-blog/${page.url.next}`
       class:list={{
         disabled: !page.url.next,
       }}>Siguientes</a

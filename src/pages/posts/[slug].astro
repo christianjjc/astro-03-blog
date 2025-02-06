@@ -31,7 +31,7 @@ const author = (await getEntry('author', post.data.author.id))!.data;
   <div class="text-sm text-gray-400 flex flex-row my-5">
     <Image src={author.avatar} alt={author.name} height={50} width={50} class="rounded-full" />
     <div class="flex flex-col ml-5 justify-center">
-      <a href=`/blog/${frontmatter.author.id}`>{author.name}</a>
+      <a href=`/astro-03-blog/blog/${frontmatter.author.id}`>{author.name}</a>
       <span class="text-xs text-gray-200">
         {Formatter.formatDate(frontmatter.date)}
       </span>
@@ -55,7 +55,7 @@ const author = (await getEntry('author', post.data.author.id))!.data;
     {
       headings.map((heading, index) => (
         <li>
-          <a href={`#${heading.slug}`}>
+          <a href={`/astro-03-blog/#${heading.slug}`}>
             {index + 1} - {heading.text}
           </a>
         </li>
@@ -66,7 +66,7 @@ const author = (await getEntry('author', post.data.author.id))!.data;
   <Content />
 
   <div class="mt-20">
-    <a href="#btn-back">Ir arriba</a>
+    <a href="/astro-03-blog/#btn-back">Ir arriba</a>
   </div>
 </BlogLayout>
 
